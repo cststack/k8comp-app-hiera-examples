@@ -2,15 +2,11 @@
 # deploy using k8comp -p galaxies -a andromeda -e development
 
 %{kind_replication}
-metadata:
-  labels:
-    app: %{application}-%{environment}-rc
-  name: %{application}-%{environment}-rc
-  namespace: %{project}-%{environment}%{var1000}%{var1001}
+%{metadata}
+  namespace: %{project}-%{environment}
 spec:
   replicas: 3
-  selector:
-    app: nginx
+  %{nginx-selector}
   template:
     metadata:
       labels:

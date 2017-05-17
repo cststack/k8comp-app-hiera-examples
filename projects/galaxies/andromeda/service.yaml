@@ -1,9 +1,6 @@
 ---
 %{kind_service}
-metadata:
-  labels:
-    app: %{application}-%{environment}-svc
-  name: %{application}-%{environment}-svc
+%{metadata}
   namespace: %{project}-%{environment}
 spec:
   type: NodePort
@@ -11,5 +8,4 @@ spec:
   - port: 80
     nodePort: %{nodeport}
     protocol: TCP
-  selector:
-    app: nginx
+  %{nginx-selector}
