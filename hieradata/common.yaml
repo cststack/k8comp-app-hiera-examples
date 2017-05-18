@@ -13,7 +13,13 @@ kind_serviceaccount:
   apiVersion: v1
 
 metadata:
-  metadata:
-    labels:
-      app: "%%{::}{application}-%%{::}{environment}"
-    name: "%%{::}{application}-%%{::}{environment}"
+    metadata:
+      labels:
+        app: "%%{::}{application}-%%{::}{environment}"
+      name: "%%{::}{application}-%%{::}{environment}"
+      namespace: "%%{::}{project}-%%{::}{environment}"
+
+nginx-selector:
+  selector:
+      selector:
+        app: "%%{::}{application}-%%{::}{environment}-nginx"

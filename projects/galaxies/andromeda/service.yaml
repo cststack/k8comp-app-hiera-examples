@@ -1,7 +1,6 @@
 ---
 %{kind_service}
 %{metadata}
-  namespace: %{project}-%{environment}
 spec:
   type: NodePort
   ports:

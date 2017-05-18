@@ -3,7 +3,6 @@
 
 %{kind_replication}
 %{metadata}
-  namespace: %{project}-%{environment}
 spec:
   replicas: 3
   %{nginx-selector}

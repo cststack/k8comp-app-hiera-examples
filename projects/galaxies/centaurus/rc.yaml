@@ -3,7 +3,6 @@
 # deploy using k8comp -p galaxies -a centaurus/rc -e development
 %{kind_replication}
 %{metadata}
-  namespace: %{project}-%{environment}%{var1000}%{var1001}
 spec:
   replicas: 3
   %{nginx-selector}
