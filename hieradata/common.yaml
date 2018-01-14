@@ -1,5 +1,9 @@
 ---
 
+kind_deployment:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+
 kind_replication:
   kind: ReplicationController
   apiVersion: v1
@@ -7,6 +11,10 @@ kind_replication:
 kind_service:
   kind: Service
   apiVersion: v1
+
+kind_ingress:
+    apiVersion: extensions/v1beta1
+    kind: Ingress
 
 kind_serviceaccount:
   kind: ServiceAccount
@@ -18,6 +26,20 @@ metadata:
         app: "%%{::}{application}-%%{::}{environment}"
       name: "%%{::}{application}-%%{::}{environment}"
       namespace: "%%{::}{project}-%%{::}{environment}"
+
+metadata_nginx:
+    metadata:
+      name: "%%{::}{application}"
+      namespace: "%%{::}{environment}"
+
+deployment_strategy:
+    strategy:
+      rollingUpdate:
+        maxSurge: 10%
+        maxUnavailable: 0
+    revisionHistoryLimit: 10
+
+pod_replicas: 1
 
 nginx-selector:
   selector:

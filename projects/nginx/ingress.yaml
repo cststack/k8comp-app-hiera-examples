@@ -1,0 +1,12 @@
+---
+%{kind_ingress}
+%{metadata_nginx}
+spec:
+  rules:
+  - host: %{ingress_ext_url}
+    http:
+       paths:
+        - path: /
+          backend:
+            serviceName: %{application}
+            servicePort: 80

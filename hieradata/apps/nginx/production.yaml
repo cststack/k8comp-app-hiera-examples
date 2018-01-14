@@ -1,0 +1,12 @@
+---
+cpu_limits: 300m
+cpu_requests: 200m
+
+memory_limits: 512Mi
+memory_requests: 512Mi
+
+nx_tag: 1.13.8-alpine-perl
+
+ingress_ext_url: 'prod.example.com'
+
+pod_replicas: 5

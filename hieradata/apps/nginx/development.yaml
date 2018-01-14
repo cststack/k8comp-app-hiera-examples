@@ -1,0 +1,10 @@
+---
+cpu_limits: 100m
+cpu_requests: 50m
+
+memory_limits: 256Mi
+memory_requests: 128Mi
+
+nx_tag: 1.12-alpine
+
+ingress_ext_url: 'dev.example.com'
